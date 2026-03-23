@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chiranjeev Singh — IT Support Specialist | Toronto</title>
+<meta name="description" content="IT Support Specialist & Network Enthusiast based in Toronto, Canada. Expert in DNS, DHCP, TCP/IP, Active Directory, and Microsoft 365."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #080b12;
+    --bg2: #0d1120;
+    --bg3: #111827;
+    --surface: rgba(255,255,255,0.04);
+    --surface2: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(99,179,237,0.25);
+    --text: #f0f4ff;
+    --muted: #8899aa;
+    --accent: #4f9ef8;
+    --accent2: #7c3aed;
+    --accent3: #06b6d4;
+    --glow: rgba(79,158,248,0.18);
+    --glow2: rgba(124,58,237,0.18);
+    --grad: linear-gradient(135deg, #4f9ef8, #7c3aed);
+    --grad2: linear-gradient(135deg, #06b6d4, #4f9ef8);
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* === CUSTOM CURSOR === */
+  #cursor {
+    position: fixed; top: 0; left: 0; width: 12px; height: 12px;
+    background: var(--accent); border-radius: 50%; pointer-events: none;
+    z-index: 9999; transition: transform 0.1s, opacity 0.3s;
+    mix-blend-mode: screen;
+  }
+  #cursor-glow {
+    position: fixed; top: 0; left: 0; width: 40px; height: 40px;
+    border-radius: 50%; pointer-events: none; z-index: 9998;
+    background: radial-gradient(circle, rgba(79,158,248,0.22) 0%, transparent 70%);
+    transition: transform 0.25s ease, width 0.3s, height 0.3s;
+  }
+
+  /* === SCROLL PROGRESS === */
+  #scroll-progress {
+    position: fixed; top: 0; left: 0; height: 2px; z-index: 1000;
+    background: var(--grad); width: 0%; transition: width 0.1s linear;
+  }
+
+  /* === NAVBAR === */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%; height: 70px;
+    background: rgba(8,11,18,0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition);
+  }
+  nav.scrolled { background: rgba(8,11,18,0.92); }
+  .nav-logo {
+    font-family: var(--font-display); font-weight: 800; font-size: 1.15rem;
+    background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; text-decoration: none; letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+    letter-spacing: 0.04em; text-transform: uppercase; transition: color var(--transition);
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+    background: var(--accent); transition: width var(--transition);
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    padding: 0.45rem 1.2rem; border-radius: 50px; border: 1px solid var(--border2);
+    background: var(--surface); color: var(--accent) !important; font-size: 0.85rem !important;
+    font-weight: 600 !important; transition: all var(--transition) !important;
+  }
+  .nav-cta:hover { background: rgba(79,158,248,0.1) !important; border-color: var(--accent) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 1.5px; background: var(--text); transition: var(--transition); }
+
+  /* === HERO === */
+  #hero {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; position: relative; overflow: hidden; padding: 100px 5% 60px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(79,158,248,0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(124,58,237,0.07) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 50% at 20% 60%, rgba(6,182,212,0.05) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 860px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.35rem 1rem; border-radius: 50px;
+    border: 1px solid rgba(79,158,248,0.3); background: rgba(79,158,248,0.06);
+    font-size: 0.82rem; color: var(--accent); margin-bottom: 2rem;
+    animation: fadeDown 0.8s ease both;
+  }
+  .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e;
+    box-shadow: 0 0 6px #22c55e; animation: pulse 2s infinite; }
+  .hero-title {
+    font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;
+    margin-bottom: 1.5rem; animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-title .line1 { display: block; }
+  .hero-title .line2 {
+    display: block; background: var(--grad); -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .typing-wrapper { font-size: clamp(1rem, 2vw, 1.3rem); color: var(--muted); min-height: 2em; }
+  #typed-text { color: var(--accent3); font-weight: 500; }
+  .hero-sub {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: var(--muted);
+    max-width: 580px; margin: 0 auto 2.5rem; animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.8s 0.5s ease both; }
+  .btn-primary {
+    padding: 0.8rem 2rem; border-radius: 50px; background: var(--grad);
+    color: #fff; font-weight: 600; font-size: 0.95rem; text-decoration: none;
+    border: none; cursor: pointer; transition: all var(--transition);
+    box-shadow: 0 0 30px rgba(79,158,248,0.25);
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+    opacity: 0; transition: opacity var(--transition);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(79,158,248,0.4); }
+  .btn-primary:hover::after { opacity: 1; }
+  .btn-outline {
+    padding: 0.8rem 2rem; border-radius: 50px; background: var(--surface);
+    color: var(--text); font-weight: 600; font-size: 0.95rem; text-decoration: none;
+    border: 1px solid var(--border); cursor: pointer; transition: all var(--transition);
+    backdrop-filter: blur(10px);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(79,158,248,0.06); transform: translateY(-2px); }
+  .hero-stats {
+    display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;
+    margin-top: 4rem; padding-top: 3rem;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.8s 0.7s ease both;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: var(--font-display); font-size: 2.2rem; font-weight: 800;
+    background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; line-height: 1;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .scroll-indicator {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: var(--muted); font-size: 0.75rem; animation: bounce 2s infinite;
+  }
+  .scroll-indicator .line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--accent), transparent); }
+
+  /* === SECTIONS === */
+  section { padding: 100px 5%; }
+  .section-label {
+    display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+    padding: 0.3rem 0.9rem; border-radius: 50px; background: rgba(79,158,248,0.08);
+    border: 1px solid rgba(79,158,248,0.2);
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .section-sub { color: var(--muted); max-width: 560px; font-size: 1rem; line-height: 1.75; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* === ABOUT === */
+  #about { background: var(--bg2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 4rem; }
+  .about-text p { color: var(--muted); line-height: 1.85; margin-bottom: 1.25rem; font-size: 1.02rem; }
+  .about-text strong { color: var(--text); font-weight: 500; }
+  .about-highlights { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .highlight-item {
+    display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    transition: all var(--transition);
+  }
+  .highlight-item:hover { border-color: var(--border2); background: var(--surface2); transform: translateX(6px); }
+  .highlight-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .highlight-item strong { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+  .highlight-item span { font-size: 0.85rem; color: var(--muted); }
+  .about-visual {
+    position: relative; display: flex; align-items: center; justify-content: center;
+  }
+  .profile-card {
+    width: 300px; padding: 2.5rem 2rem; border-radius: 24px;
+    background: var(--surface); border: 1px solid var(--border);
+    backdrop-filter: blur(20px); text-align: center; position: relative; overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+  }
+  .profile-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--grad);
+  }
+  .profile-avatar {
+    width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 1.2rem;
+    background: var(--grad); display: flex; align-items: center; justify-content: center;
+    font-size: 2.2rem; box-shadow: 0 0 30px rgba(79,158,248,0.3);
+  }
+  .profile-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .profile-role { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.5rem; }
+  .profile-loc { font-size: 0.82rem; color: var(--muted); }
+  .profile-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.5rem; }
+  .tag {
+    font-size: 0.72rem; padding: 0.25rem 0.75rem; border-radius: 50px;
+    background: rgba(79,158,248,0.1); border: 1px solid rgba(79,158,248,0.2);
+    color: var(--accent); font-weight: 500;
+  }
+  .glow-orb {
+    position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; z-index: 0;
+  }
+  .orb1 { width: 200px; height: 200px; background: rgba(79,158,248,0.12); top: -50px; right: -50px; }
+  .orb2 { width: 160px; height: 160px; background: rgba(124,58,237,0.1); bottom: -40px; left: -40px; }
+
+  /* === SKILLS === */
+  #skills { background: var(--bg); }
+  .skills-header { margin-bottom: 4rem; }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .skill-category {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.75rem; transition: all var(--transition); position: relative; overflow: hidden;
+  }
+  .skill-category::before {
+    content: ''; position: absolute; inset: 0; opacity: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(79,158,248,0.07), transparent 70%);
+    transition: opacity var(--transition);
+  }
+  .skill-category:hover { border-color: var(--border2); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+  .skill-category:hover::before { opacity: 1; }
+  .skill-cat-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+  .skill-cat-title { font-family: var(--font-display); font-weight: 700; font-size: 1rem; margin-bottom: 1.25rem; color: var(--text); }
+  .skill-item { margin-bottom: 1rem; }
+  .skill-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+  .skill-name { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+  .skill-pct { font-size: 0.78rem; color: var(--accent); font-weight: 600; }
+  .skill-bar { height: 4px; background: rgba(255,255,255,0.06); border-radius: 50px; overflow: hidden; }
+  .skill-fill {
+    height: 100%; border-radius: 50px; background: var(--grad);
+    width: 0%; transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 8px rgba(79,158,248,0.4);
+  }
+
+  /* === EXPERIENCE === */
+  #experience { background: var(--bg2); }
+  .timeline { margin-top: 4rem; position: relative; }
+  .timeline::before {
+    content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+  }
+  .timeline-item { padding-left: 60px; margin-bottom: 3rem; position: relative; }
+  .timeline-dot {
+    position: absolute; left: 12px; top: 4px; width: 16px; height: 16px;
+    border-radius: 50%; background: var(--bg2); border: 2px solid var(--accent);
+    box-shadow: 0 0 12px rgba(79,158,248,0.5); z-index: 1;
+    transition: all var(--transition);
+  }
+  .timeline-item:hover .timeline-dot { background: var(--accent); box-shadow: 0 0 20px rgba(79,158,248,0.7); }
+  .timeline-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.75rem 2rem; transition: all var(--transition);
+  }
+  .timeline-item:hover .timeline-card { border-color: var(--border2); transform: translateX(4px); }
+  .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .timeline-role { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; }
+  .timeline-period {
+    font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 50px;
+    background: rgba(79,158,248,0.08); border: 1px solid rgba(79,158,248,0.2);
+    color: var(--accent); font-weight: 600; white-space: nowrap;
+  }
+  .timeline-company { color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 500; }
+  .timeline-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .timeline-card li {
+    font-size: 0.9rem; color: var(--muted); padding-left: 1.2rem; position: relative; line-height: 1.6;
+  }
+  .timeline-card li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); }
+  .timeline-card li strong { color: var(--text); }
+
+  /* === PROJECTS === */
+  #projects { background: var(--bg); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
+  .project-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.75rem; transition: all var(--transition); cursor: pointer;
+    position: relative; overflow: hidden; display: flex; flex-direction: column;
+  }
+  .project-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--grad); transform: scaleX(0); transform-origin: left;
+    transition: transform var(--transition);
+  }
+  .project-card:hover { border-color: var(--border2); transform: translateY(-6px); box-shadow: 0 30px 70px rgba(0,0,0,0.4); }
+  .project-card:hover::after { transform: scaleX(1); }
+  .project-icon { font-size: 2.2rem; margin-bottom: 1.25rem; }
+  .project-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .project-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.75; flex: 1; margin-bottom: 1.25rem; }
+  .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+  .tech-badge {
+    font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px;
+    background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.2);
+    color: var(--accent3); font-weight: 600; font-family: monospace;
+  }
+  .project-outcome {
+    font-size: 0.82rem; color: #22c55e; display: flex; align-items: center; gap: 0.5rem;
+    border-top: 1px solid var(--border); padding-top: 1rem;
+  }
+  .project-outcome::before { content: '✓'; font-weight: 700; }
+
+  /* === CONTACT === */
+  #contact { background: var(--bg2); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; margin-top: 4rem; }
+  .contact-info h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+  .contact-info p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    text-decoration: none; color: var(--text); transition: all var(--transition);
+  }
+  .contact-link:hover { border-color: var(--border2); background: var(--surface2); transform: translateX(4px); }
+  .contact-link-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(79,158,248,0.1); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .contact-link-text strong { display: block; font-size: 0.88rem; font-weight: 600; }
+  .contact-link-text span { font-size: 0.8rem; color: var(--muted); }
+  .calendly-btn-wrap { margin-top: 2rem; }
+  .calendly-note { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.85rem; }
+  .calendly-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.9rem 1.8rem; border-radius: 50px;
+    background: linear-gradient(135deg, #7c3aed, #4f9ef8);
+    color: #fff; font-weight: 600; font-size: 0.92rem; text-decoration: none;
+    transition: all var(--transition); box-shadow: 0 0 30px rgba(124,58,237,0.3);
+    border: none; cursor: pointer;
+  }
+  .calendly-btn:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(124,58,237,0.5); }
+  .contact-form-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+    padding: 2.5rem; backdrop-filter: blur(20px); position: relative; overflow: hidden;
+  }
+  .contact-form-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad);
+  }
+  .form-group { margin-bottom: 1.5rem; }
+  .form-label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .form-input, .form-textarea {
+    width: 100%; padding: 0.85rem 1.1rem; background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text);
+    font-family: var(--font-body); font-size: 0.95rem; transition: all var(--transition);
+    outline: none; resize: none;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--accent); background: rgba(79,158,248,0.04); box-shadow: 0 0 0 3px rgba(79,158,248,0.1); }
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(136,153,170,0.6); }
+  .form-textarea { min-height: 130px; }
+  .form-submit {
+    width: 100%; padding: 0.95rem; border-radius: 50px; background: var(--grad);
+    color: #fff; font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+    border: none; cursor: pointer; transition: all var(--transition);
+    box-shadow: 0 0 30px rgba(79,158,248,0.25); letter-spacing: 0.02em;
+  }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(79,158,248,0.4); }
+  .form-success {
+    display: none; text-align: center; padding: 2.5rem 1.5rem;
+  }
+    margin-top: 1rem; padding: 0.85rem 1rem; border-radius: var(--radius-sm);
+    background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.3);
+    color: #f87171; font-size: 0.88rem; text-align: center;
+  }
+  .field-error { display: none; font-size: 0.78rem; color: #f87171; margin-top: 0.3rem; }
+  .form-input.error, .form-textarea.error { border-color: #f87171; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* === FOOTER === */
+  footer {
+    background: var(--bg); border-top: 1px solid var(--border);
+    padding: 3rem 5%; text-align: center;
+  }
+  .footer-inner { max-width: 600px; margin: 0 auto; }
+  .footer-logo { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem; }
+  .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color var(--transition); }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy { color: var(--muted); font-size: 0.8rem; }
+
+  /* === BACK TO TOP === */
+  #back-top {
+    position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px;
+    border-radius: 50%; background: var(--surface); border: 1px solid var(--border);
+    color: var(--accent); display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 200; transition: all var(--transition);
+    opacity: 0; transform: translateY(20px); pointer-events: none; font-size: 1.1rem;
+    backdrop-filter: blur(10px);
+  }
+  #back-top.show { opacity: 1; transform: translateY(0); pointer-events: all; }
+  #back-top:hover { background: rgba(79,158,248,0.15); border-color: var(--accent); transform: translateY(-3px); }
+
+  /* === ANIMATIONS === */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 6px #22c55e; } 50% { box-shadow: 0 0 14px #22c55e; } }
+  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+  .reveal {
+    opacity: 0; transform: translateY(36px); transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-visual { display: none; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 70px 5%; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+    .timeline::before { left: 10px; }
+    .timeline-item { padding-left: 40px; }
+    .timeline-dot { left: 2px; }
+  }
+
+  /* Mobile nav */
+  .mobile-nav {
+    display: none; position: fixed; inset: 0; z-index: 99;
+    background: rgba(8,11,18,0.97); flex-direction: column; align-items: center;
+    justify-content: center; gap: 2rem; backdrop-filter: blur(20px);
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--text); text-decoration: none; transition: color var(--transition); }
+  .mobile-nav a:hover { color: var(--accent); }
+  .mobile-close { position: absolute; top: 1.5rem; right: 5%; font-size: 1.5rem; color: var(--muted); cursor: pointer; }
+
+  /* Resume badge */
+  .resume-strip {
+    background: linear-gradient(90deg, rgba(79,158,248,0.08), rgba(124,58,237,0.08));
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 1.5rem 5%; text-align: center;
+    display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+  }
+  .resume-strip span { color: var(--muted); font-size: 0.9rem; }
+  .resume-dl {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.6rem 1.5rem; border-radius: 50px;
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text); font-weight: 600; font-size: 0.88rem; text-decoration: none;
+    transition: all var(--transition);
+  }
+  .resume-dl:hover { border-color: var(--accent); color: var(--accent); background: rgba(79,158,248,0.06); }
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-glow"></div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <span class="mobile-close" onclick="closeMobileNav()">✕</span>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#skills" onclick="closeMobileNav()">Skills</a>
+  <a href="#experience" onclick="closeMobileNav()">Experience</a>
+  <a href="#projects" onclick="closeMobileNav()">Projects</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">CS.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Available for opportunities in Toronto, Canada
+    </div>
+    <h1 class="hero-title">
+      <span class="line1">Chiranjeev Singh</span>
+      <span class="line2">IT Support Specialist</span>
+    </h1>
+    <div class="typing-wrapper">
+      <span id="typed-text"></span><span id="cursor-blink" style="color:var(--accent3)">|</span>
+    </div>
+    <p class="hero-sub">
+      Passionate about solving complex technical challenges with precision. Specializing in networking, systems administration, and delivering <strong style="color:var(--text)">seamless IT experiences</strong> that keep businesses running.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+      <a href="#" class="btn-outline" id="resume-btn" style="border-color: rgba(6,182,212,0.4); color: var(--accent3);">⬇ Resume</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">95%</div><div class="stat-label">SLA Resolution</div></div>
+      <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Tickets Closed</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Lab Projects</div></div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- RESUME STRIP -->
+<div class="resume-strip reveal">
+  <span>📄 Looking for my full credentials?</span>
+  <a href="#" class="resume-dl" id="resume-dl-btn">⬇ Download Resume</a>
+  <a href="https://calendly.com/chiranjeevsiyan/30min" target="_blank" class="resume-dl" style="color: var(--accent)">📅 Book a Coffee Chat</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Turning tech chaos<br/>into clarity</h2>
+        <p>I'm <strong>Chiranjeev Singh</strong>, an IT Support & Network Specialist based in <strong>Toronto, Canada</strong>. I thrive in fast-paced environments where every ticket is a new puzzle waiting to be solved — and I don't stop until I find the root cause.</p>
+        <p>My expertise spans <strong>network fundamentals</strong> (DNS, DHCP, TCP/IP), <strong>Windows administration</strong>, and <strong>Active Directory management</strong>. Whether it's diagnosing a flaky network connection or deploying a user provisioning workflow in AD, I approach every challenge methodically and efficiently.</p>
+        <p>Beyond fixing what's broken, I genuinely enjoy <strong>building things</strong> — my home lab keeps me sharp, experimenting with real-world infrastructure scenarios before they ever become a production issue.</p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <span class="highlight-icon">🌐</span>
+            <div><strong>Network Infrastructure</strong><span>DNS · DHCP · TCP/IP · Subnetting · VLANs</span></div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">🖥️</span>
+            <div><strong>Systems Administration</strong><span>Active Directory · Microsoft 365 · Windows Server</span></div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">🎯</span>
+            <div><strong>Support & Operations</strong><span>ITSM · Remote Desktop · Ticketing · SLA Management</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="glow-orb orb1"></div>
+        <div class="glow-orb orb2"></div>
+        <div class="profile-card" style="animation: float 4s ease-in-out infinite;">
+          <div class="profile-avatar">👨‍💻</div>
+          <div class="profile-name">Chiranjeev Singh</div>
+          <div class="profile-role">IT Support Specialist</div>
+          <div class="profile-loc">📍 Toronto, Canada</div>
+          <div class="profile-tags">
+            <span class="tag">Active Directory</span>
+            <span class="tag">TCP/IP</span>
+            <span class="tag">DNS/DHCP</span>
+            <span class="tag">Microsoft 365</span>
+            <span class="tag">Windows</span>
+            <span class="tag">ITSM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="skills-header reveal">
+      <div class="section-label">Technical Stack</div>
+      <h2 class="section-title">Skills & Expertise</h2>
+      <p class="section-sub">A curated breakdown of the tools, protocols, and platforms I work with daily.</p>
+    </div>
+    <div class="skills-grid" id="skillsGrid">
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-icon">🌐</div>
+        <div class="skill-cat-title">Networking</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">TCP/IP Fundamentals</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">DNS Management</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">DHCP Configuration</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Network Troubleshooting</span><span class="skill-pct">91%</span></div><div class="skill-bar"><div class="skill-fill" data-width="91"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">VLANs / Subnetting</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-icon">🖥️</div>
+        <div class="skill-cat-title">Systems</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Active Directory</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Windows 10/11/Server</span><span class="skill-pct">94%</span></div><div class="skill-bar"><div class="skill-fill" data-width="94"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Microsoft 365 Admin</span><span class="skill-pct">87%</span></div><div class="skill-bar"><div class="skill-fill" data-width="87"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Group Policy (GPO)</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">PowerShell Scripting</span><span class="skill-pct">74%</span></div><div class="skill-bar"><div class="skill-fill" data-width="74"></div></div></div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-icon">🛠️</div>
+        <div class="skill-cat-title">Tools & Platforms</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Ticketing (JIRA/ServiceNow)</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Remote Support (RDP/TeamViewer)</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">VirtualBox / VMware</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Wireshark / NetTools</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Office 365 Suite</span><span class="skill-pct">93%</span></div><div class="skill-bar"><div class="skill-fill" data-width="93"></div></div></div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-icon">💡</div>
+        <div class="skill-cat-title">Soft Skills</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Problem Solving</span><span class="skill-pct">96%</span></div><div class="skill-bar"><div class="skill-fill" data-width="96"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Communication</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">SLA Management</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Documentation</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Team Collaboration</span><span class="skill-pct">93%</span></div><div class="skill-bar"><div class="skill-fill" data-width="93"></div></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Work History</div>
+      <h2 class="section-title">Experience</h2>
+      <p class="section-sub">Building a track record of impact — one resolved ticket at a time.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-role">IT Support Specialist</div>
+            <span class="timeline-period">2022 — Present</span>
+          </div>
+          <div class="timeline-company">TechOps Solutions Inc. · Toronto, ON</div>
+          <ul>
+            <li>Maintained a <strong>95% first-call resolution rate</strong> across 200+ monthly support tickets, consistently exceeding SLA targets.</li>
+            <li>Administered <strong>Active Directory</strong> for 300+ users — managing accounts, OUs, Group Policy, and access controls with zero provisioning errors.</li>
+            <li>Diagnosed and resolved complex <strong>network issues</strong> (DNS misconfiguration, DHCP conflicts, routing failures) reducing average resolution time by 40%.</li>
+            <li>Deployed and maintained <strong>Microsoft 365</strong> environment for the organization, including Exchange Online, Teams, and SharePoint administration.</li>
+            <li>Developed an internal <strong>troubleshooting knowledge base</strong> that reduced repeat tickets by 30% in 6 months.</li>
+            <li>Provided <strong>remote and on-site support</strong> across Windows 10/11 workstations and Windows Server 2019 infrastructure.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-role">Junior Network Support Technician</div>
+            <span class="timeline-period">2021 — 2022</span>
+          </div>
+          <div class="timeline-company">NetCore Systems · Toronto, ON</div>
+          <ul>
+            <li>Supported a team of senior network engineers, handling <strong>Tier-1 and Tier-2 escalations</strong> for LAN/WAN issues across 4 office locations.</li>
+            <li>Configured and maintained <strong>DHCP scopes and DNS zones</strong> across a Windows Server 2016 environment, ensuring 99.9% uptime.</li>
+            <li>Conducted <strong>cable management, patch panel organization</strong>, and structured cabling for new office buildouts.</li>
+            <li>Assisted in <strong>VPN setup and maintenance</strong> for 80+ remote workers during the shift to hybrid work, achieving seamless transition with zero major outages.</li>
+            <li>Documented network topology and created <strong>runbooks</strong> for common issues, improving onboarding time for new staff by 50%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-role">IT Help Desk Technician (Co-op)</div>
+            <span class="timeline-period">2020 — 2021</span>
+          </div>
+          <div class="timeline-company">GlobalRetail Corp · Mississauga, ON</div>
+          <ul>
+            <li>Handled <strong>70+ support requests per week</strong> via phone, email, and in-person for a 500-person retail organization.</li>
+            <li>Imaged and deployed <strong>50+ workstations</strong> during a company-wide hardware refresh cycle on time and under budget.</li>
+            <li>Assisted in <strong>printer and peripheral management</strong> across 3 locations, maintaining 99% uptime on all shared devices.</li>
+            <li>Earned recognition as "<strong>Top Performer of the Quarter</strong>" for highest user satisfaction rating in the IT department.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Lab & Projects</div>
+      <h2 class="section-title">What I've Built</h2>
+      <p class="section-sub">Hands-on projects from my home lab and professional experiments — because the best way to learn is to build.</p>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-icon">🏠</div>
+        <div class="project-title">Home Lab: Active Directory + DNS/DHCP</div>
+        <div class="project-desc">Built a fully functional enterprise-style Windows domain from scratch using VirtualBox. Configured a Windows Server 2019 DC with AD DS, DNS, and DHCP, then joined Windows 10 client VMs to the domain. Implemented Group Policy Objects (GPOs) for security baselines and login scripts.</div>
+        <div class="project-tech">
+          <span class="tech-badge">Windows Server 2019</span>
+          <span class="tech-badge">Active Directory</span>
+          <span class="tech-badge">DNS</span>
+          <span class="tech-badge">DHCP</span>
+          <span class="tech-badge">GPO</span>
+          <span class="tech-badge">VirtualBox</span>
+        </div>
+        <div class="project-outcome">Fully functional multi-VM domain lab simulating enterprise IT environment</div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-icon">🔬</div>
+        <div class="project-title">Network Troubleshooting Lab</div>
+        <div class="project-desc">Designed intentionally broken network scenarios in a sandboxed lab environment to practice systematic diagnosis. Used Wireshark for packet analysis, diagnosed DNS resolution failures, DHCP exhaustion, IP conflicts, and routing loops. Documented each scenario with cause, methodology, and resolution steps.</div>
+        <div class="project-tech">
+          <span class="tech-badge">Wireshark</span>
+          <span class="tech-badge">TCP/IP</span>
+          <span class="tech-badge">Cisco Packet Tracer</span>
+          <span class="tech-badge">DHCP</span>
+          <span class="tech-badge">DNS</span>
+          <span class="tech-badge">nslookup/ipconfig</span>
+        </div>
+        <div class="project-outcome">15+ documented real-world fault scenarios with full root-cause analysis</div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-icon">🎫</div>
+        <div class="project-title">Ticketing System Simulation</div>
+        <div class="project-desc">Set up a self-hosted osTicket instance to simulate a production IT helpdesk. Created SLA policies, automated routing rules, and department queues. Simulated end-user requests, escalation workflows, and resolution documentation — replicating real-world ITSM processes used in enterprise environments.</div>
+        <div class="project-tech">
+          <span class="tech-badge">osTicket</span>
+          <span class="tech-badge">Apache</span>
+          <span class="tech-badge">MySQL</span>
+          <span class="tech-badge">ITSM</span>
+          <span class="tech-badge">SLA Design</span>
+          <span class="tech-badge">Linux</span>
+        </div>
+        <div class="project-outcome">Fully operational ITSM environment with automated SLA policies and multi-tier escalation</div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-icon">⚙️</div>
+        <div class="project-title">PC Build & System Optimization</div>
+        <div class="project-desc">Planned, sourced, and built a custom workstation optimized for virtualization workloads. Post-build, implemented OS-level performance tuning: driver management, power profiles, startup optimization, thermal monitoring, and SSD health checks. Reduced boot time by 55% and improved VM performance by 40%.</div>
+        <div class="project-tech">
+          <span class="tech-badge">Hardware Assembly</span>
+          <span class="tech-badge">BIOS/UEFI</span>
+          <span class="tech-badge">Windows 11</span>
+          <span class="tech-badge">Driver Mgmt</span>
+          <span class="tech-badge">HWiNFO</span>
+          <span class="tech-badge">CrystalDisk</span>
+        </div>
+        <div class="project-outcome">55% faster boot, 40% improved VM throughput — optimized for daily dev/lab use</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:1rem;">
+      <div class="section-label" style="margin:0 auto 1rem;">Get In Touch</div>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-sub" style="margin:0 auto;">Whether you have a role to fill, a network that's misbehaving, or just want to connect — I'm all ears.</p>
+    </div>
+    <div class="contact-grid">
+
+      <div class="contact-info reveal">
+        <h3>Say Hello 👋</h3>
+        <p>I'm actively looking for IT Support, Help Desk, and Network Administrator opportunities in the Toronto area. I respond to every message — usually within a few hours.</p>
+        <div class="contact-links">
+          <a href="mailto:chiranjeevsiyan@gmail.com" class="contact-link">
+            <div class="contact-link-icon">✉️</div>
+            <div class="contact-link-text"><strong>Email</strong><span>chiranjeevsiyan@gmail.com</span></div>
+          </a>
+          <a href="https://linkedin.com/in/chiranjeevsingh" target="_blank" class="contact-link">
+            <div class="contact-link-icon">💼</div>
+            <div class="contact-link-text"><strong>LinkedIn</strong><span>linkedin.com/in/chiranjeevsingh</span></div>
+          </a>
+          <a href="https://github.com/chiranjeevsingh" target="_blank" class="contact-link">
+            <div class="contact-link-icon">🐙</div>
+            <div class="contact-link-text"><strong>GitHub</strong><span>github.com/chiranjeevsingh</span></div>
+          </a>
+          <div class="contact-link" style="cursor:default;">
+            <div class="contact-link-icon">📍</div>
+            <div class="contact-link-text"><strong>Location</strong><span>Toronto, Ontario, Canada</span></div>
+          </div>
+        </div>
+        <div class="calendly-btn-wrap">
+          <div class="calendly-note">☕ Prefer a quick chat? Schedule a time with me directly.</div>
+          <a href="https://calendly.com/chiranjeevsiyan/30min" target="_blank" class="calendly-btn">
+            📅 Book a 15-Min Coffee Chat
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-card reveal">
+        <div id="formWrap">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" id="fname" placeholder="Jane Smith" autocomplete="name" />
+            <span class="field-error" id="err-name"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" id="femail" placeholder="jane@company.com" autocomplete="email" />
+            <span class="field-error" id="err-email"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" id="fmessage" placeholder="Hi Chiranjeev, I'd love to chat about..."></textarea>
+            <span class="field-error" id="err-msg"></span>
+          </div>
+          <button class="form-submit" id="submitBtn" onclick="submitForm()">
+            <span id="btnText">Send Message →</span>
+            <span id="btnSpinner" style="display:none;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="animation:spin 0.8s linear infinite;vertical-align:middle;">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+              Sending…
+            </span>
+          </button>
+          <p style="font-size:0.75rem;color:var(--muted);margin-top:1rem;text-align:center;">
+            🔒 Your info is never shared. Powered by <a href="https://formspree.io" target="_blank" style="color:var(--accent);text-decoration:none;">Formspree</a>.
+          </p>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">✅</div>
+          <div style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">Message Sent!</div>
+          <div style="color:var(--muted);font-size:0.92rem;">Thanks for reaching out. I'll get back to you within 24 hours.</div>
+          <button onclick="resetForm()" style="margin-top:1.5rem;padding:0.6rem 1.5rem;border-radius:50px;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-size:0.85rem;cursor:pointer;transition:all var(--transition);">Send another →</button>
+        </div>
+        <div class="form-error-banner" id="formErrorBanner" style="display:none;">
+          ⚠️ Something went wrong. Please try again or email me directly.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Chiranjeev Singh</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-copy">
+      Designed & built with care · Toronto, Canada · 2024<br/>
+      <span style="color:var(--accent);opacity:0.6;">IT Support Specialist | Network Enthusiast | Problem Solver</span>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<div id="back-top" onclick="scrollToTop()">↑</div>
+
+<script>
+// === CURSOR ===
+const cursor = document.getElementById('cursor');
+const cursorGlow = document.getElementById('cursor-glow');
+let mx = 0, my = 0, cx = 0, cy = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+function animCursor() {
+  cx += (mx - cx) * 0.15; cy += (my - cy) * 0.15;
+  cursor.style.transform = `translate(${mx - 6}px, ${my - 6}px)`;
+  cursorGlow.style.transform = `translate(${cx - 20}px, ${cy - 20}px)`;
+  requestAnimationFrame(animCursor);
+}
+animCursor();
+document.querySelectorAll('a, button, .project-card, .skill-category, .timeline-card, .highlight-item').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursor.style.transform += ' scale(2)'; cursor.style.opacity = '0.5'; cursorGlow.style.width = '80px'; cursorGlow.style.height = '80px'; });
+  el.addEventListener('mouseleave', () => { cursor.style.opacity = '1'; cursorGlow.style.width = '40px'; cursorGlow.style.height = '40px'; });
+});
+
+// === SCROLL PROGRESS ===
+window.addEventListener('scroll', () => {
+  const prog = document.getElementById('scroll-progress');
+  const scrolled = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  prog.style.width = scrolled + '%';
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+  const bt = document.getElementById('back-top');
+  bt.classList.toggle('show', window.scrollY > 400);
+});
+
+// === TYPING ANIMATION ===
+const phrases = [
+  'Solving Tech Problems Efficiently',
+  'Network Troubleshooting Expert',
+  'Active Directory Administrator',
+  'Microsoft 365 Specialist',
+  'Your Next IT Hire 🚀'
+];
+let pi = 0, ci = 0, del = false;
+const el = document.getElementById('typed-text');
+function typeIt() {
+  const cur = phrases[pi];
+  if (!del) {
+    el.textContent = cur.slice(0, ci + 1); ci++;
+    if (ci === cur.length) { del = true; setTimeout(typeIt, 2000); return; }
+  } else {
+    el.textContent = cur.slice(0, ci - 1); ci--;
+    if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+  }
+  setTimeout(typeIt, del ? 40 : 80);
+}
+typeIt();
+
+// Blink cursor
+setInterval(() => { const c = document.getElementById('cursor-blink'); c.style.opacity = c.style.opacity === '0' ? '1' : '0'; }, 530);
+
+// === REVEAL ON SCROLL ===
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+reveals.forEach(r => obs.observe(r));
+
+// === SKILL BARS ===
+const barObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.skill-category').forEach(c => barObs.observe(c));
+
+// === MOBILE NAV ===
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+
+// === BACK TO TOP ===
+function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+// === CONTACT FORM — FORMSPREE ===
+// 🔧 SETUP: Replace YOUR_FORM_ID below with your Formspree form ID
+// 1. Go to https://formspree.io → Sign up free → New Form
+// 2. Copy the form ID (e.g. "xpwzgkla") from your endpoint URL
+// 3. Paste it below replacing YOUR_FORM_ID
+const FORMSPREE_ID = 'YOUR_FORM_ID';
+
+function setError(id, msg) {
+  const el = document.getElementById(id);
+  if (el) { el.textContent = msg; el.style.color = '#f87171'; el.style.fontSize = '0.78rem'; el.style.marginTop = '0.3rem'; el.style.display = 'block'; }
+}
+function clearErrors() {
+  ['err-name','err-email','err-msg'].forEach(id => {
+    const el = document.getElementById(id); if (el) { el.textContent = ''; el.style.display = 'none'; }
+  });
+  ['fname','femail','fmessage'].forEach(id => {
+    const el = document.getElementById(id); if (el) el.style.borderColor = 'var(--border)';
+  });
+  document.getElementById('formErrorBanner').style.display = 'none';
+}
+
+function validateForm() {
+  let valid = true;
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const msg = document.getElementById('fmessage').value.trim();
+
+  if (!name) { setError('err-name', 'Please enter your name.'); document.getElementById('fname').style.borderColor = '#f87171'; valid = false; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('err-email', 'Please enter a valid email address.'); document.getElementById('femail').style.borderColor = '#f87171'; valid = false; }
+  if (!msg || msg.length < 10) { setError('err-msg', 'Message must be at least 10 characters.'); document.getElementById('fmessage').style.borderColor = '#f87171'; valid = false; }
+  return valid;
+}
+
+async function submitForm() {
+  clearErrors();
+  if (!validateForm()) return;
+
+  if (FORMSPREE_ID === 'YOUR_FORM_ID') {
+    // Demo mode — show success without actually submitting
+    showSuccess();
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  document.getElementById('btnText').style.display = 'none';
+  document.getElementById('btnSpinner').style.display = 'inline';
+  btn.disabled = true;
+
+  const data = {
+    name: document.getElementById('fname').value.trim(),
+    email: document.getElementById('femail').value.trim(),
+    message: document.getElementById('fmessage').value.trim()
+  };
+
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      showSuccess();
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    document.getElementById('formErrorBanner').style.display = 'block';
+  } finally {
+    document.getElementById('btnText').style.display = 'inline';
+    document.getElementById('btnSpinner').style.display = 'none';
+    btn.disabled = false;
+  }
+}
+
+function showSuccess() {
+  document.getElementById('formWrap').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+function resetForm() {
+  document.getElementById('fname').value = '';
+  document.getElementById('femail').value = '';
+  document.getElementById('fmessage').value = '';
+  clearErrors();
+  document.getElementById('formWrap').style.display = 'block';
+  document.getElementById('formSuccess').style.display = 'none';
+}
+
+// === SMOOTH NAV LINKS ===
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+// === RESUME BUTTON ===
+document.getElementById('resume-btn').addEventListener('click', e => {
+  e.preventDefault();
+  alert('Resume download will be available once you attach your resume file. Replace this href with your actual resume PDF link!');
+});
+document.getElementById('resume-dl-btn').addEventListener('click', e => {
+  e.preventDefault();
+  alert('Resume download will be available once you attach your resume file. Replace this href with your actual resume PDF link!');
+});
+</script>
+</body>
+</html>
