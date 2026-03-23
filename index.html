@@ -544,7 +544,7 @@
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="#contact" class="btn-outline">Get In Touch</a>
-      <a href="#" class="btn-outline" id="resume-btn" style="border-color: rgba(6,182,212,0.4); color: var(--accent3);">⬇ Resume</a>
+      <a href="resume.pdf" class="btn-outline" id="resume-btn" style="border-color: rgba(6,182,212,0.4); color: var(--accent3);">⬇ Resume</a>
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">95%</div><div class="stat-label">SLA Resolution</div></div>
@@ -562,7 +562,7 @@
 <!-- RESUME STRIP -->
 <div class="resume-strip reveal">
   <span>📄 Looking for my full credentials?</span>
-  <a href="#" class="resume-dl" id="resume-dl-btn">⬇ Download Resume</a>
+  <a href="resume.pdf" class="resume-dl" id="resume-dl-btn">⬇ Download Resume</a>
   <a href="https://calendly.com/chiranjeevsiyan/30min" target="_blank" class="resume-dl" style="color: var(--accent)">📅 Book a Coffee Chat</a>
 </div>
 
@@ -1091,14 +1091,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // === RESUME BUTTON ===
-document.getElementById('resume-btn').addEventListener('click', e => {
-  e.preventDefault();
-  alert('Resume download will be available once you attach your resume file. Replace this href with your actual resume PDF link!');
-});
-document.getElementById('resume-dl-btn').addEventListener('click', e => {
-  e.preventDefault();
-  alert('Resume download will be available once you attach your resume file. Replace this href with your actual resume PDF link!');
-});
 </script>
 </body>
 </html>
