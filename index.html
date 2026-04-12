@@ -270,7 +270,7 @@
   .skill-item { margin-bottom: 1rem; }
   .skill-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
   .skill-name { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
-  .skill-pct { font-size: 0.78rem; color: var(--accent); font-weight: 600; }
+  .skill-pct { display: none; }
   .skill-bar { height: 4px; background: rgba(255,255,255,0.06); border-radius: 50px; overflow: hidden; }
   .skill-fill {
     height: 100%; border-radius: 50px; background: var(--grad);
@@ -544,7 +544,7 @@
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="#contact" class="btn-outline">Get In Touch</a>
-      <a href="resume.pdf" class="btn-outline" id="resume-btn" style="border-color: rgba(6,182,212,0.4); color: var(--accent3);">⬇ Resume</a>
+      <a href="#" class="btn-outline" id="resume-btn" style="border-color: rgba(6,182,212,0.4); color: var(--accent3);">⬇ Resume</a>
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">95%</div><div class="stat-label">SLA Resolution</div></div>
@@ -562,7 +562,7 @@
 <!-- RESUME STRIP -->
 <div class="resume-strip reveal">
   <span>📄 Looking for my full credentials?</span>
-  <a href="resume.pdf" class="resume-dl" id="resume-dl-btn">⬇ Download Resume</a>
+  <a href="#" class="resume-dl" id="resume-dl-btn">⬇ Download Resume</a>
   <a href="https://calendly.com/chiranjeevsiyan/30min" target="_blank" class="resume-dl" style="color: var(--accent)">📅 Book a Coffee Chat</a>
 </div>
 
@@ -626,41 +626,41 @@
       <div class="skill-category reveal">
         <div class="skill-cat-icon">🌐</div>
         <div class="skill-cat-title">Networking</div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">TCP/IP Fundamentals</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">DNS Management</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">DHCP Configuration</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Network Troubleshooting</span><span class="skill-pct">91%</span></div><div class="skill-bar"><div class="skill-fill" data-width="91"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">VLANs / Subnetting</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">TCP/IP Fundamentals</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">DNS Management</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">DHCP Configuration</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Network Troubleshooting</span></div><div class="skill-bar"><div class="skill-fill" data-width="91"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">VLANs / Subnetting</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
       </div>
 
       <div class="skill-category reveal">
         <div class="skill-cat-icon">🖥️</div>
         <div class="skill-cat-title">Systems</div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Active Directory</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Windows 10/11/Server</span><span class="skill-pct">94%</span></div><div class="skill-bar"><div class="skill-fill" data-width="94"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Microsoft 365 Admin</span><span class="skill-pct">87%</span></div><div class="skill-bar"><div class="skill-fill" data-width="87"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Group Policy (GPO)</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">PowerShell Scripting</span><span class="skill-pct">74%</span></div><div class="skill-bar"><div class="skill-fill" data-width="74"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Active Directory</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Windows 10/11/Server</span></div><div class="skill-bar"><div class="skill-fill" data-width="94"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Microsoft 365 Admin</span></div><div class="skill-bar"><div class="skill-fill" data-width="87"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Group Policy (GPO)</span></div><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">PowerShell Scripting</span></div><div class="skill-bar"><div class="skill-fill" data-width="74"></div></div></div>
       </div>
 
       <div class="skill-category reveal">
         <div class="skill-cat-icon">🛠️</div>
         <div class="skill-cat-title">Tools & Platforms</div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Ticketing (JIRA/ServiceNow)</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Remote Support (RDP/TeamViewer)</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">VirtualBox / VMware</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Wireshark / NetTools</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Office 365 Suite</span><span class="skill-pct">93%</span></div><div class="skill-bar"><div class="skill-fill" data-width="93"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Ticketing (JIRA/ServiceNow)</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Remote Support (RDP/TeamViewer)</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">VirtualBox / VMware</span></div><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Wireshark / NetTools</span></div><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Office 365 Suite</span></div><div class="skill-bar"><div class="skill-fill" data-width="93"></div></div></div>
       </div>
 
       <div class="skill-category reveal">
         <div class="skill-cat-icon">💡</div>
         <div class="skill-cat-title">Soft Skills</div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Problem Solving</span><span class="skill-pct">96%</span></div><div class="skill-bar"><div class="skill-fill" data-width="96"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Communication</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">SLA Management</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Documentation</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Team Collaboration</span><span class="skill-pct">93%</span></div><div class="skill-bar"><div class="skill-fill" data-width="93"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Problem Solving</span></div><div class="skill-bar"><div class="skill-fill" data-width="96"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Communication</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">SLA Management</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Documentation</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Team Collaboration</span></div><div class="skill-bar"><div class="skill-fill" data-width="93"></div></div></div>
       </div>
 
     </div>
@@ -823,17 +823,17 @@
         <h3>Say Hello 👋</h3>
         <p>I'm actively looking for IT Support, Help Desk, and Network Administrator opportunities in the Toronto area. I respond to every message — usually within a few hours.</p>
         <div class="contact-links">
-          <a href="mailto:chiranjeevsiyan@gmail.com" class="contact-link">
+          <a href="/cdn-cgi/l/email-protection#c5a6adacb7a4abafa0a0b3b6acbca4ab85a2a8a4aca9eba6aaa8" class="contact-link">
             <div class="contact-link-icon">✉️</div>
-            <div class="contact-link-text"><strong>Email</strong><span>chiranjeevsiyan@gmail.com</span></div>
+            <div class="contact-link-text"><strong>Email</strong><span><span class="__cf_email__" data-cfemail="b3d0dbdac1d2ddd9d6d6c5c0dacad2ddf3d4ded2dadf9dd0dcde">[email&#160;protected]</span></span></div>
           </a>
-          <a href="https://www.linkedin.com/in/chiranjeev-singh-79aa70306" target="_blank" class="contact-link">
+          <a href="https://linkedin.com/in/chiranjeevsingh" target="_blank" class="contact-link">
             <div class="contact-link-icon">💼</div>
             <div class="contact-link-text"><strong>LinkedIn</strong><span>linkedin.com/in/chiranjeevsingh</span></div>
           </a>
-          <a href="https://github.com/chiranjeev2023" target="_blank" class="contact-link">
+          <a href="https://github.com/chiranjeevsingh" target="_blank" class="contact-link">
             <div class="contact-link-icon">🐙</div>
-            <div class="contact-link-text"><strong>GitHub</strong><span>github.com/chiranjeev2023</span></div>
+            <div class="contact-link-text"><strong>GitHub</strong><span>github.com/chiranjeevsingh</span></div>
           </a>
           <div class="contact-link" style="cursor:default;">
             <div class="contact-link-icon">📍</div>
@@ -914,7 +914,7 @@
 <!-- BACK TO TOP -->
 <div id="back-top" onclick="scrollToTop()">↑</div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // === CURSOR ===
 const cursor = document.getElementById('cursor');
 const cursorGlow = document.getElementById('cursor-glow');
@@ -1091,6 +1091,14 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // === RESUME BUTTON ===
+document.getElementById('resume-btn').addEventListener('click', e => {
+  e.preventDefault();
+  alert('Resume download will be available once you attach your resume file. Replace this href with your actual resume PDF link!');
+});
+document.getElementById('resume-dl-btn').addEventListener('click', e => {
+  e.preventDefault();
+  alert('Resume download will be available once you attach your resume file. Replace this href with your actual resume PDF link!');
+});
 </script>
 </body>
 </html>
